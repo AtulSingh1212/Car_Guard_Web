@@ -10,7 +10,7 @@ import {
   Headphones,
   ArrowRight,
 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const perks = [
   {
@@ -282,9 +282,9 @@ export default function LoginPage() {
 
                 <p className="text-center text-gray-400 text-[13px]">
                   Don't have an account?{" "}
-                  <a href="/register" className="text-purple-400 font-medium hover:underline">
+                  <Link to="/register" className="text-purple-400 font-medium hover:underline">
                     Create account →
-                  </a>
+                  </Link>
                 </p>
               </form>
             )}
