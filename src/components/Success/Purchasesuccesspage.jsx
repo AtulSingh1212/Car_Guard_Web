@@ -1,5 +1,6 @@
 import { Check, Mail, LayoutGrid, ArrowRight, Download, CreditCard, HelpCircle } from "lucide-react";
 import PageLayout from "../../pages/Layout/PageLayout";
+import { useNavigate } from "react-router-dom";
 
 const nextSteps = [
   {
@@ -13,6 +14,14 @@ const nextSteps = [
 ];
 
 export default function PurchaseSuccessPage() {
+  const navigate = useNavigate();
+
+  const handleRedirectToDashboard = () => {
+    navigate("/dashboard");
+    alert("Redirecting to your dashboard...")
+
+  }
+  
   return (
     <PageLayout>
         <div className="min-h-screen font-sans relative overflow-hidden">
@@ -127,7 +136,7 @@ export default function PurchaseSuccessPage() {
 
               {/* Action buttons */}
               <button
-                onClick={() => alert("Redirecting to your dashboard...")}
+                onClick={handleRedirectToDashboard}
                 className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-purple-600 hover:brightness-110 transition text-white font-semibold text-[13.5px] rounded-xl py-3.5"
               >
                 Go to dashboard
