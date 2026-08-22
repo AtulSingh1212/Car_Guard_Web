@@ -199,3 +199,4 @@ export const canAccess = (userRole, allowedRoles = []) =>
 - **Never trust client-side role checks alone** — `RoleBasedRoute` is a UX convenience; your backend API must independently verify the JWT's role claim on every protected endpoint.
 - **Confirm payment success server-side** (via PSP webhook) before activating a contract — don't flip "Active" status purely because the client reached `/checkout/success`.
 - Keep all API calls inside `services/`, never inside components — makes it trivial to mock for tests and to swap backends later.
+
