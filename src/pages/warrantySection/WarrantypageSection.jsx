@@ -7,7 +7,7 @@ import Footer from '../../components/layout/Footer'
 
 const WarrantypageSection = () => {
   return (
-    <div>
+    <div className='overflow-hidden h-auto'>
         <WarrantyPage />
         <PricingCards />
         <ComparePlansTable />

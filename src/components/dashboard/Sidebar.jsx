@@ -21,8 +21,8 @@ export default function Sidebar({ active, setActive }) {
   return (
     <div className="w-[220px] flex-shrink-0 bg-[#0f1119] border-r border-[#20222f] flex flex-col h-screen sticky top-0">
       <div className="flex items-center gap-2.5 px-5 py-5">
-        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center flex-shrink-0">
-          <ShieldCheck size={16} className="text-white" />
+        <div className="w-8 h-8 rounded-lg object-cover flex items-center justify-center flex-shrink-0">
+          <img src="/assets/images/logo.png" alt="" />
         </div>
         <span className="text-white font-bold text-[16px]">Car Engyisi</span>
       </div>

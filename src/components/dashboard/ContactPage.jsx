@@ -1,4 +1,6 @@
-import { ArrowRight, ChevronDown, Headphones, HelpCircle, MessageSquare, Ticket } from "lucide-react";
+import { ArrowRight, ChevronDown, Headphones, HelpCircle, MessageSquare, Phone, Ticket } from "lucide-react";
+import { useState } from "react";
+import { Card, PageHeader } from "./PageHeader";
 
 const faqs = [
     { q: "How do I check the status of my claim?", a: "Go to My Claims from the sidebar. Each claim card shows a live status badge and progress tracker." },

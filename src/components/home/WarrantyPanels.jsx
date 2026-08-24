@@ -90,7 +90,7 @@ const handleExploreWarrantyPlans = () => {
   navigate('/warranty-plans');
 }
   return (
-    <section className="w-full bg-[#0b1220] py-18 h-[700px] flex items-center justify-center px-6 md:px-10">
+    <section className="w-full h-auto  bg-[#0b1220] py-18 lg:h-[700px] flex items-center justify-center px-6 md:px-10">
       <div className="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 px-3 items-stretch h-[500px]">
         {/* Warranty Plans */}
         <div className={`${cardShell} h-[460px] w-[460px] flex flex-col gap-6`}>

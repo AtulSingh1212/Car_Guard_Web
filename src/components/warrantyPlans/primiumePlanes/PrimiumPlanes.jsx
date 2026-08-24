@@ -1,4 +1,3 @@
-"use client";
 
 import {
   CalendarDays,
@@ -6,10 +5,17 @@ import {
   CheckCircle2,
   ArrowRight,
 } from "lucide-react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 export default function PremiumPlan() {
   const navigate = useNavigate();
+  const selectedPlan = useSelector((state)=>state.plan.selectedPlan);
+  console.log(selectedPlan);
+
+  if(!selectedPlan){
+     return( <div className="flex items-center justify-center h-full w-full text-2xl font-bold text-white">No plan selected</div>)
+    }
   return (
     <section className="relative min-h-[455px] w-full overflow-hidden ">
       {/* Background */}
@@ -62,7 +68,7 @@ export default function PremiumPlan() {
 
               {/* Title */}
               <h2 className="lg:text-[62px] font-bold leading-[1.1] tracking-[-1.5px] text-[#d9e1ff] sm:text-[48px]">
-                Premium Plus
+                {selectedPlan?.name}
               </h2>
 
               {/* Description */}
@@ -85,14 +91,14 @@ export default function PremiumPlan() {
                     text-transparent
                   "
                 >
-                  $549
+                  {selectedPlan?.price}
                 </span>
 
                 <span className="text-xs text-[#c0c6d8]">
                   / Year
                 </span>
               </div>
-
+              
               {/* Plan Details */}
               <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-[#bfc5d5]">
                 <div className="flex items-center gap-2">

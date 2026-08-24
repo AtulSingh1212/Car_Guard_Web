@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PageHeader } from "./PageHeader";
+import { Card, PageHeader } from "./PageHeader";
 import { Check, CreditCard, Settings, ShieldCheck, Wrench } from "lucide-react";
 
 const notificationsData = [

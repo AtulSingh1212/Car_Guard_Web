@@ -7,8 +7,8 @@ const PrivateRoutes = () => {
   return (
     <div>
         <Routes>
-            <Route path='/dashboard' element={<CarGuardDashboard/>} />
-            {/* <Route path='/dashboard' element={<MainDashboard/>} /> */}
+            {/* <Route path='/dashboard' element={<CarGuardDashboard/>} /> */}
+            <Route path='/dashboard' element={<MainDashboard/>} />
         </Routes>
     </div>
   )
