@@ -1,5 +1,8 @@
 import { ArrowRight, Download, Eye, Headphones, MapPin, Plus } from "lucide-react";
-import { Card, PageHeader } from "./PageHeader";
+// import { Card, PageHeader } from "./PageHeader";
+import MainDashboard from "../MainDashboard";
+import { PageHeader } from "./PageHeader";
+import { Card } from "./PageHeader";
 const claims = [
   {
     id: "CL-2023-1104", status: "PENDING REVIEW", statusColor: "bg-amber-500/20 text-amber-300",
@@ -26,6 +29,7 @@ const claims = [
 export default function ClaimsPage() {
     const steps = ["SUBMITTED", "REVIEWING", "APPROVED", "PAID"];
     return (
+      
       <div>
         <PageHeader
           title="My Claims"
@@ -127,5 +131,6 @@ export default function ClaimsPage() {
           </Card>
         </div>
       </div>
+    
     );
   }

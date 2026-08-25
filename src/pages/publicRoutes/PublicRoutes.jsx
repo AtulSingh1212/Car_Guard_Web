@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import ContactPage from '../../components/contect-us/ContactPage'
 import FqaResource from '../../components/fqa-resource/FqaResource'
 import WarrantyPage from '../../components/warrantyPlans/WarrantyPage'
@@ -31,6 +31,7 @@ const PublicRoutes = () => {
   // ]
   return (
     <div>
+      
         <Routes>
             <Route path='/' element={<HomePageSection />} />
             <Route path='/home' element={<HomePageSection />} />
@@ -47,6 +48,7 @@ const PublicRoutes = () => {
             <Route path='/warranty-plans/payment' element={<PaymentSection/>} />
             <Route path='/success' element={<Success/>} />
         </Routes>
+        
         <Footer/>
     </div>
     

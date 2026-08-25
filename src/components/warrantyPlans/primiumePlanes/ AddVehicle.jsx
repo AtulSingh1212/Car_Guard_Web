@@ -17,6 +17,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const imageSlots = [
   { key: "frontView", label: "Front view", required: true },
@@ -41,6 +42,10 @@ const planIncludes = [
 ];
 
 export default function AddVehicle() {
+  const selectedPlan = useSelector((state)=>state.plan.selectedPlan);
+  console.log(selectedPlan);
+
+
   const navigate = useNavigate();
   const [vehicle, setVehicle] = useState({
     year: "2022",
@@ -345,13 +350,13 @@ export default function AddVehicle() {
                 <div className="w-9 h-9 rounded-lg bg-purple-800/50 flex items-center justify-center flex-shrink-0">
                   <ShieldCheck size={18} className="text-purple-300" />
                 </div>
-                <h4 className="text-white text-[18px] font-bold">Premium Plus Plan</h4>
+                <h4 className="text-white text-[18px] font-bold">{selectedPlan?.name} Plan</h4>
               </div>
               <p className="text-gray-400 text-[16px] mb-4">Our most comprehensive coverage</p>
 
               <div className="flex items-baseline gap-1.5 mb-3">
                 <span className="bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent text-3xl font-extrabold">
-                  $549.00
+                  {selectedPlan?.price}
                 </span>
                 <span className="text-gray-400 text-[12px]">/year</span>
               </div>

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Card, PageHeader } from "./PageHeader";
 import { Check, FileText, Upload, User } from "lucide-react";
+import { PageHeader ,Card} from "./PageHeader";
 
 export default function ProfilePage() {
     const [prefs, setPrefs] = useState({ claims: true, account: true, marketing: false });

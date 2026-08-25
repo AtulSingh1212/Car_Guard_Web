@@ -1,19 +1,22 @@
 import React, { useState } from 'react'
-import DashboardPage from './DashboardPage';
-import ContractsPage from './ContractsPage';
-import ClaimsPage from './ClaimPage';
-import RoadsidePage from './RodesidePage';
-import VehiclesPage from './VehiclesPage';
-import PaymentsPage from './PaymentsPage';
-import NotificationsPage from './NotificationsPage';
-import ProfilePage from './ProfilePage';
-import ContactPage from './ContactPage';
-import Sidebar from './Sidebar';
-import Topbar from './Topbar';
+import DashboardPage from './Outlet/DashboardPage';
+import RoadsidePage from './Outlet/RodesidePage';
+import VehiclesPage from './Outlet/VehiclesPage';
+import NotificationsPage from './Outlet/NotificationsPage';
+import ProfilePage from './Outlet/ProfilePage';
+import ContactPage from './Outlet/ContactPage';
+import ContractsPage from './Outlet/ContractsPage';
+// import ClaimsPage from './Outlet/ClaimPage';
+import PaymentsPage from './Outlet/PaymentsPage';
+import Sidebar from './common/Sidebar';
+import Topbar from './common/Topbar';
+import ClaimsPage from './Outlet/ClaimPage';
+import { Outlet } from 'react-router-dom';
+// import DashboardPage from './DashboardPage';
 
 
 
-export default function MainDashboard() {
+export default function MainDashboard({children}) {
     const [active, setActive] = useState("dashboard");
     
     function renderPage() {
@@ -36,9 +39,9 @@ export default function MainDashboard() {
       <div className="flex bg-[#0d0e17] min-h-screen font-sans">
         <Sidebar active={active} setActive={setActive} />
         <div className="flex-1 min-w-0">
-          <Topbar />
-          <div className="px-8 py-8">{renderPage()}</div>
+          <Topbar active={active} setActive={setActive} />
+          <div className="px-8 py-8">{<Outlet/>}</div>
         </div>
       </div>
     );
-  }
+}

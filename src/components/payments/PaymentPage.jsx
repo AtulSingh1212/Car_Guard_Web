@@ -9,12 +9,14 @@ import {
 } from "lucide-react";
 import PageLayout from "../../pages/Layout/PageLayout";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function PaymentPage() {
   const navigate = useNavigate();
   const [method, setMethod] = useState("card");
   const [saveCard, setSaveCard] = useState(false);
   const [sameAsRegistration, setSameAsRegistration] = useState(true);
+  const selectedPlan = useSelector((state)=>state.plan.selectedPlan)
 
   const [card, setCard] = useState({
     name: "",
@@ -303,9 +305,9 @@ export default function PaymentPage() {
                 Selected plan
               </p>
               <div className="flex items-start justify-between mb-1">
-                <span className="text-white text-[15px] font-bold">Premium Plus</span>
+                <span className="text-white text-[15px] font-bold">{selectedPlan?.name} Plus</span>
                 <span className="text-white text-[15px] font-bold">
-                  $549<span className="text-gray-400 text-[11px] font-normal">/yr</span>
+                  {selectedPlan?.price}<span className="text-gray-400 text-[11px] font-normal">/yr</span>
                 </span>
               </div>
               <p className="text-gray-400 text-[11.5px]">Coverage for 2021 Tesla Model 3</p>
@@ -314,7 +316,7 @@ export default function PaymentPage() {
             <div className="flex flex-col gap-2.5 border-b border-[#262939] pb-4 mb-4">
               <div className="flex items-center justify-between text-[13px]">
                 <span className="text-gray-300">Base plan (12 months)</span>
-                <span className="text-gray-100">$549.00</span>
+                <span className="text-gray-100">{selectedPlan?.price}</span>
               </div>
               <div className="flex items-center justify-between text-[13px]">
                 <span className="text-gray-300">Taxes & fees</span>
@@ -328,7 +330,7 @@ export default function PaymentPage() {
 
             <div className="flex items-center justify-between mb-5">
               <span className="text-white text-[15px] font-bold">Total due today</span>
-              <span className="text-white text-2xl font-extrabold">$494.10</span>
+              <span className="text-white text-2xl font-extrabold">{selectedPlan?.price}</span>
             </div>
 
             <button

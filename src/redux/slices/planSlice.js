@@ -2,8 +2,10 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 
+const savePlan = localStorage.getItem('selectedPlan');
+
 const initialState = {
-  selectedPlan: null,
+  selectedPlan: savePlan?JSON.parse(savePlan):null,
 };
 
 const planSlice = createSlice({
@@ -12,6 +14,7 @@ const planSlice = createSlice({
   reducers: {
     setSelectedPlan: (state, action) => {
       state.selectedPlan = action.payload;
+      localStorage.setItem('selectedPlan',JSON.stringify(action.payload));
     },
 
     clearSelectedPlan: (state) => {

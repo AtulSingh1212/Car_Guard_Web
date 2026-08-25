@@ -1,4 +1,5 @@
 import { Car, ShieldCheck, Pencil, Check, Lock, ArrowLeft, ArrowRight } from "lucide-react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const planFeatures = [
@@ -9,6 +10,8 @@ const planFeatures = [
 ];
 
 export default function ReviewInformationPage() {
+    const selectedPlan = useSelector((state)=>state.plan.selectedPlan)
+    console.log(selectedPlan);
     const navigate = useNavigate();
   return (
     <div className="min-h-screen font-sans relative overflow-hidden lg:mt-10 lg:mr-30">
@@ -105,8 +108,8 @@ export default function ReviewInformationPage() {
 
             <div className="border-b border-[#262939] pb-4 mb-4 flex flex-col gap-2.5">
               <div className="flex items-center justify-between text-[13.5px]">
-                <span className="text-gray-300 text-[14px]">Premium Plus Plan (1 Year)</span>
-                <span className="text-gray-100 font-medium ">$549.00</span>
+                <span className="text-gray-300 text-[14px]">{selectedPlan?.name} Plan (1 Year)</span>
+                <span className="text-gray-100 font-medium ">{selectedPlan?.price} Plan (1 Year)</span>
               </div>
               <div className="flex items-center justify-between text-[13.5px]">
                 <span className="text-gray-300 text-[14px]">Taxes & Fees</span>
@@ -117,7 +120,7 @@ export default function ReviewInformationPage() {
             <div className="flex items-center justify-between mb-6">
               <span className="text-white text-[25px] font-bold">Total Due Today</span>
               <span className="bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent text-4xl font-extrabold">
-                $549.00
+                {selectedPlan?.price}
               </span>
             </div>
 
