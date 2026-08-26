@@ -163,8 +163,8 @@ export default function PricingCards() {
   }
 
   return (
-    <section className="relative w-full h-[1900px] md:h-[1900px] lg:h-[700px] bg-[#0b1220]  px-6 md:px-10 flex  justify-center">
-      <div className=" w-full h-[1800px]  sm:h-[1700px] lg:h-[1200px] p-2 flex mt-6 justify-center flex-wrap gap-4 ">
+    <section className=" w-full h-auto  bg-[#0b1220]  px-6 md:px-10 flex  justify-center">
+      <div className=" w-full h-auto  p-2 flex mt-6 justify-center flex-wrap gap-4 ">
         {plans.map((plan) => {
           const Icon = plan.icon; 
           return (

@@ -27,8 +27,8 @@ export default function Sidebar({ active, setActive }) {
   return (
     <div 
     
-    className={` ${!isOpen?"w-[220px]":"sm:w-[70px]"} w-[70px] flex-shrink-0 bg-[#0f1119] border-r border-[#20222f] flex flex-col h-screen sticky top-0`}>
-      <div className="flex items-center gap-2.5 px-5 py-5">
+    className={` ${!isOpen?"w-[220px] transition-all duration-300":"sm:w-[70px] transition-all duration-300"} w-[70px] flex-shrink-0 bg-[#0f1119] border-r border-[#20222f] flex flex-col h-screen sticky top-0`}>
+      <div className="relative flex items-center gap-2.5 px-5 py-5">
         <div className="w-8 h-8 rounded-lg object-cover flex items-center justify-center flex-shrink-0">
         
           <img
@@ -38,7 +38,7 @@ export default function Sidebar({ active, setActive }) {
         {!isOpen && (
           <span className="text-white font-bold text-[16px]">Car Engyisi</span>
           )}
-          <button onClick={() => setIsOpen(!isOpen)} className="text-white text-2xl">{!isOpen ? "✕" : "☰"}</button>
+          <button onClick={() => setIsOpen(!isOpen)} className="text-white text-2xl cursor-pointer absolute right-[1px] top-[2px]">{!isOpen ? "✕" : "☰"}</button>
       </div>
 
       <nav className="flex-1 px-3 flex flex-col gap-1 overflow-y-auto">

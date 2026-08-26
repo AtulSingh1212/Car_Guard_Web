@@ -46,16 +46,16 @@ const AboutPage = () => {
               <div className="w-[900px] h-[400px] justify-between">
 
                 {/* Small heading */}
-                <p className="mb-3 text-md font-semibold uppercase tracking-[3px] text-[#ff7655]">
+                <p className="mb-3 text-sm lg:text-md font-semibold uppercase tracking-[3px] text-[#ff7655]">
                   About CarGuard
                 </p>
 
                 {/* Main heading */}
-                <h1 className="text-7xl font-bold leading-[1.05] text-white">
+                <h1 className="lg:text-7xl text-5xl font-bold leading-[1.05] text-white">
                   Built on Trust.
                   <br />
                   Driven by{" "}
-                  <span className="text-7xl text-[#ff7655]">
+                  <span className="lg:text-7xl text-5xl text-[#ff7655]">
                     Protection.
                   </span>
                 </h1>
