@@ -47,6 +47,7 @@ const PublicRoutes = () => {
             <Route path='/warranty-plans/review-information' element={<ReviewInformation/>} />
             <Route path='/warranty-plans/payment' element={<PaymentSection/>} />
             <Route path='/success' element={<Success/>} />
+            
         </Routes>
         
         <Footer/>

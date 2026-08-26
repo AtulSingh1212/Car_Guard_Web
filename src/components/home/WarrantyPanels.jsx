@@ -90,10 +90,10 @@ const handleExploreWarrantyPlans = () => {
   navigate('/warranty-plans');
 }
   return (
-    <section className="w-full h-auto  bg-[#0b1220] py-18 lg:h-[700px] flex items-center justify-center px-6 md:px-10">
-      <div className="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 px-3 items-stretch h-[500px]">
+    <section className="w-full h-auto min-h-[1200px] lg:min-h-[700px] bg-[#0b1220] py-18 lg:h-[700px] flex items-center justify-center px-6 md:px-10">
+      <div className="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 px-3  items-stretch lg:h-[500px] h-[1600px]">
         {/* Warranty Plans */}
-        <div className={`${cardShell} h-[460px] w-[460px] flex flex-col gap-6`}>
+        <div className={`${cardShell} h-[460px]  w-auto lg:w-[460px] flex flex-col gap-6`}>
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-white text-xl font-bold">Our Warranty Plans</h3>
             <a
@@ -151,7 +151,7 @@ const handleExploreWarrantyPlans = () => {
         </div>
 
         {/* How It Works */}
-        <div className={`${cardShell} h-[460px] w-[500px] flex flex-col justify-between`}>
+        <div className={`${cardShell} h-auto md:h-[460px] w-auto lg:w-[500px] flex flex-col justify-between`}>
           <h3 className="text-white text-xl font-bold mb-1">How It Works</h3>
           <p className="text-slate-400 text-sm mb-8">Simple. Fast. Reliable.</p>
 
@@ -201,7 +201,7 @@ const handleExploreWarrantyPlans = () => {
         </div>
 
         {/* Roadside Assistance */}
-        <div className={`${cardShell} h-[460px] w-[400px] flex flex-col justify-between`}>
+        <div className={`${cardShell} h-auto md:h-[460px] w-auto md:w-[400px] flex flex-col justify-between`}>
           <h3 className="text-white text-xl font-bold mb-1">Roadside Assistance</h3>
           <p className="text-slate-400 text-sm mb-6">We're here for you 24/7.</p>
 

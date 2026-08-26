@@ -2,138 +2,196 @@ import { ShieldCheck, Headset, ArrowRight } from "lucide-react";
 
 export default function QuestionsCTA() {
   return (
-    <div
-      style={{
-        fontFamily:
-          "'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif",
-        background: "#0d0e17",
-        padding: "48px 20px",
-      }}
+    <section
+      className="
+        bg-[#0d0e17]
+        px-4
+        py-10
+        font-sans
+        sm:px-6
+        sm:py-12
+        lg:px-8
+    "
     >
       <div
-        className=" items-center"
-        style={{
-          position: "relative",
-          maxWidth: 1440,
-          height: 200,
-          margin: "0 auto",
-          borderRadius: 16,
-          border: "1px solid #3a2f52",
-          overflow: "hidden",
-          background:
-            "radial-gradient(120% 160% at 15% 20%, #4a2a6e 0%, #241a3d 42%, #171522 70%, #100e18 100%)",
-        }}
+        className="
+          relative
+          mx-auto
+          w-full
+          max-w-[1440px]
+          overflow-hidden
+          rounded-2xl
+          border
+          border-[#3a2f52]
+          bg-[radial-gradient(120%_160%_at_15%_20%,#4a2a6e_0%,#241a3d_42%,#171522_70%,#100e18_100%)]
+        "
       >
-        {/* subtle light streak layer */}
+        {/* Light streak */}
         <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "linear-gradient(115deg, transparent 40%, rgba(233,110,60,0.12) 55%, transparent 70%)",
-            pointerEvents: "none",
-          }}
+          className="
+            pointer-events-none
+            absolute
+            inset-0
+            bg-[linear-gradient(115deg,transparent_40%,rgba(233,110,60,0.12)_55%,transparent_70%)]
+          "
         />
 
+        {/* Content */}
         <div
-          style={{
-            position: "relative",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-            gap: 24,
-            padding: "28px 32px",
-          }}
-          className="cta-row"
+          className="
+            relative
+            flex
+            flex-col
+            gap-6
+            p-5
+            sm:p-6
+            md:flex-row
+            md:items-center
+            md:justify-between
+            md:gap-8
+            lg:px-8
+            lg:py-7
+          "
         >
-          {/* Left: icon + text */}
-          <div className=" relative flex items-center justify-center" style={{ display: "flex", gap: 16, alignItems: "flex-start", minWidth: 280 }}>
+          {/* ================================= */}
+          {/* Left: Icon + Text */}
+          {/* ================================= */}
+
+          <div
+            className="
+              flex
+              min-w-0
+              items-start
+              gap-3
+              sm:gap-4
+              md:max-w-[650px]
+            "
+          >
+            {/* Icon */}
             <div
-              style={{
-                flexShrink: 0,
-                width: 42,
-                height: 42,
-                borderRadius: 12,
-                background: "linear-gradient(135deg, #c2418f 0%, #7c3aed 100%)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-              className="mt-5 flex items-center justify-center "
+              className="
+                flex
+                h-[42px]
+                w-[42px]
+                shrink-0
+                items-center
+                justify-center
+                rounded-xl
+                bg-[linear-gradient(135deg,#c2418f_0%,#7c3aed_100%)]
+                shadow-lg
+                shadow-purple-900/20
+              "
             >
-              <ShieldCheck size={20} color="#ffffff" strokeWidth={2} />
+              <ShieldCheck
+                size={20}
+                color="#ffffff"
+                strokeWidth={2}
+              />
             </div>
 
-            <div className=" min-h-30 h-full flex flex-col justify-center">
+            {/* Text */}
+            <div className="min-w-0">
               <h2
-                style={{
-                  color: "#ffffff",
-                  fontSize: 24,
-                  fontWeight: 700,
-                  marginBottom: 6,
-                }}
+                className="
+                  mb-1.5
+                  text-xl
+                  font-bold
+                  leading-tight
+                  text-white
+                  sm:text-2xl
+                "
               >
                 Have more questions?
               </h2>
+
               <p
-                style={{
-                  color: "#a9abbd",
-                  fontSize: 18,
-                  lineHeight: 1.55,
-                  maxWidth: 420,
-                  margin: 0,
-                }}
+                className="
+                  max-w-[520px]
+                  text-sm
+                  leading-6
+                  text-[#a9abbd]
+                  sm:text-base
+                  lg:text-lg
+                "
               >
-                Our warranty experts are ready to provide the clarity you need
-                for your specific vehicle protection goals.
+                Our warranty experts are ready to provide the clarity you
+                need for your specific vehicle protection goals.
               </p>
             </div>
           </div>
 
-          {/* Right: buttons */}
-          <div style={{ display: "flex", gap: 12, flexShrink: 0 }}>
+          {/* ================================= */}
+          {/* Right: Buttons */}
+          {/* ================================= */}
+
+          <div
+            className="
+              flex
+              w-full
+              flex-col
+              gap-3
+              sm:flex-row
+              md:w-auto
+              md:shrink-0
+            "
+          >
+            {/* Talk to expert */}
             <button
-              onClick={() => alert("Connecting you to an expert...")}
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 8,
-                background: "#5a3ec8",
-                color: "#ffffff",
-                fontSize: 14.5,
-                fontWeight: 500,
-                border: "none",
-                borderRadius: 10,
-                padding: "12px 20px",
-                cursor: "pointer",
-                whiteSpace: "nowrap",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = "#6b4ade")}
-              onMouseLeave={(e) => (e.currentTarget.style.background = "#5a3ec8")}
+              onClick={() =>
+                alert("Connecting you to an expert...")
+              }
+              className="
+                inline-flex
+                w-full
+                items-center
+                justify-center
+                gap-2
+                rounded-[10px]
+                border-none
+                bg-[#5a3ec8]
+                px-5
+                py-3
+                text-sm
+                font-medium
+                text-white
+                transition
+                duration-200
+                hover:bg-[#6b4ade]
+                active:scale-[0.98]
+                sm:w-auto
+                sm:whitespace-nowrap
+              "
             >
               Talk to an expert
               <Headset size={16} />
             </button>
 
+            {/* Free quote */}
             <button
-              onClick={() => alert("Redirecting to free quote form...")}
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 8,
-                background: "linear-gradient(90deg, #8b3fd4 0%, #e0663f 100%)",
-                color: "#ffffff",
-                fontSize: 14.5,
-                fontWeight: 500,
-                border: "none",
-                borderRadius: 10,
-                padding: "12px 20px",
-                cursor: "pointer",
-                whiteSpace: "nowrap",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.filter = "brightness(1.08)")}
-              onMouseLeave={(e) => (e.currentTarget.style.filter = "brightness(1)")}
+              onClick={() =>
+                alert("Redirecting to free quote form...")
+              }
+              className="
+                inline-flex
+                w-full
+                items-center
+                justify-center
+                gap-2
+                rounded-[10px]
+                border-none
+                bg-[linear-gradient(90deg,#8b3fd4_0%,#e0663f_100%)]
+                px-5
+                py-3
+                text-sm
+                font-medium
+                text-white
+                transition
+                duration-200
+                hover:brightness-110
+                active:scale-[0.98]
+                sm:w-auto
+                sm:whitespace-nowrap
+              "
             >
               Get a free quote
               <ArrowRight size={16} />
@@ -141,15 +199,6 @@ export default function QuestionsCTA() {
           </div>
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 640px) {
-          .cta-row {
-            flex-direction: column;
-            align-items: flex-start !important;
-          }
-        }
-      `}</style>
-    </div>
+    </section>
   );
 }

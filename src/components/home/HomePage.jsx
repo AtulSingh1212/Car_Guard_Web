@@ -73,9 +73,8 @@ const HomePage = () => {
           <Navbar />
         </div>
 
-
         <main className="flex  justify-center items-center w-full h-[100vh]">
-          <div className='w-full max-w-7xl gap-9 flex flex-col'>
+          <div className='w-full max-w-7xl gap-9 flex sm:items-center lg:items-start gl:flex-col'>
             <div className='flex flex-col gap-4'>
               <h4 className='text-3xl uppercase text-[#F2745F] font-bold tracking-widest'>Drive Worry-Free </h4>
               <h1 className='text-8xl font-bold text-white'>Every Mile <br /> <span className='text-[#F2745F]'>Protected</span></h1>
@@ -95,8 +94,8 @@ const HomePage = () => {
 
         </main>
 
-        <div className="flex items-center justify-center w-auto absolute bottom-0 sm:left-0 lg:w-full h-30 px-4 sm:px-6 lg:px-10">
-          <div className='w-[500px] overflow-hidden flex justify-around h-full lg:w-full items-center rounded-lg bg-white'>
+        <div className="flex items-center justify-center w-auto bottom-0 sm:left-0 lg:w-full lg:h-30 h-auto px-4 sm:px-6 lg:px-10">
+          <div className='w-auto lg:w-[500px] overflow-hidden p-2 flex justify-around h-auto lg:h-full lg:w-full items-center rounded-lg bg-white gap-4 flex-col lg:flex-row'>
               {bottomSection.map((btm)=>(
                 <div key={btm.id} className='flex items-center justify-between h-auto w-auto gap-3 '>
                   <span className={`flex items-center justify-center text-auto lg:text-2xl p-1 lg:p-3 size-12 lg:size-16  cursor-pointer rounded-full ${btm.bgColor} `}>{btm.icon}</span>

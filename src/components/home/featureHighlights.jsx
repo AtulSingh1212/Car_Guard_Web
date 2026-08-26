@@ -38,8 +38,8 @@ import {
   
   const FeatureHighlights = () => {
     return (
-      <section className="w-full flex items-center justify-center h-[150px] px-4 py-2 px-2 lg:px-20 bg-[#0b1220]/95">
-        <div className="mx-auto flex w-full h-full items-center justify-around rounded-md bg-white px-6 py-5 shadow-lg">
+      <section className="w-full flex items-center justify-center lg:h-[150px] h-auto px-4 py-2 px-2 lg:px-20 bg-[#0b1220]/95">
+        <div className="mx-auto flex w-[300px] md:w-full h-atuo gap-4 flex-col lg:flex-row items-center justify-around rounded-md bg-white px-6 py-5 shadow-lg">
   
           {features.map((feature, index) => {
             const Icon = feature.icon;
@@ -47,7 +47,7 @@ import {
             return (
               <div
                 key={feature.title}
-                className={`flex flex-1 items-center gap-3 h-[100px] w-[100px] `}
+                className={`flex flex-1 items-center gap-3 lg:h-[100px] lg:w-[100px] h-auto w-auto `}
               >
                 {/* Icon */}
                 <div

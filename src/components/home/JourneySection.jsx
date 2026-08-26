@@ -73,14 +73,14 @@ export default function JourneySection() {
 
   return (
     <div className="h-auto w-auto bg-[#0b1220] gap-10 flex flex-col">
-        <div className=" flex justify-center items-center bottom-0 left-0  h-35  px-10">
-          <div className='flex justify-around h-full w-full max-w-[1400px] items-center rounded-xl bg-white'>
+        <div className="flex items-center justify-center w-auto bottom-0 sm:left-0 lg:w-full lg:h-30 h-auto px-4 sm:px-6 lg:px-10">
+          <div className='w-auto lg:w-[500px] overflow-hidden p-2 flex justify-around h-auto lg:h-full lg:w-full items-center rounded-lg bg-white gap-4 flex-col lg:flex-row'>
               {bottomSection.map((btm)=>(
                 <div key={btm.id} className='flex items-center justify-between h-auto w-auto gap-3 '>
-                  <span className={`text-2xl p-3  cursor-pointer rounded-full ${btm.bgColor} `}>{btm.icon}</span>
+                  <span className={`flex items-center justify-center text-auto lg:text-2xl p-1 lg:p-3 size-12 lg:size-16  cursor-pointer rounded-full ${btm.bgColor} `}>{btm.icon}</span>
                   <div className='flex flex-col items-start justify-center'>
-                    <h1 className={`${btm.textBold?'text-md font-semibold text-gray-500':'text-2xl font-bold '}`}>{btm.count}</h1>
-                    <p className={` ${btm.textBold?'font-bold text-2xl text-black':'text-md text-gray-500'}`}>{btm.description}</p>
+                    <h1 className={`${btm.textBold?'text-md font-semibold text-gray-500':'lg:text-2xl text-md font-bold '}`}>{btm.count}</h1>
+                    <p className={` ${btm.textBold?'text-autofont-bold lg:text-2xl text-black':'text-sm text-gray-500'}`}>{btm.description}</p>
                   </div>
                 </div>
               ))}

@@ -60,10 +60,22 @@ const videos = [
 ];
 
 const colorMap = {
-  purple: { bg: "#4c2f8f", fg: "#c9b3f5" },
-  green: { bg: "#14493a", fg: "#6ee7b7" },
-  blue: { bg: "#1e3a6e", fg: "#93c5fd" },
-  amber: { bg: "#6e3f1e", fg: "#f5b876" },
+  purple: {
+    bg: "bg-[#4c2f8f]",
+    fg: "text-[#c9b3f5]",
+  },
+  green: {
+    bg: "bg-[#14493a]",
+    fg: "text-[#6ee7b7]",
+  },
+  blue: {
+    bg: "bg-[#1e3a6e]",
+    fg: "text-[#93c5fd]",
+  },
+  amber: {
+    bg: "bg-[#6e3f1e]",
+    fg: "text-[#f5b876]",
+  },
 };
 
 function ResourceCard({ item, onDownload }) {
@@ -75,65 +87,81 @@ function ResourceCard({ item, onDownload }) {
     <div
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      style={{
-        background: "#171926",
-        border: `1px solid ${hover ? "#3d4058" : "#2a2d3d"}`,
-        borderRadius: 12,
-        padding: 22,
-        transition: "border-color 0.15s ease",
-      }}
+      className={`
+        rounded-xl
+        border
+        bg-[#171926]
+        p-4
+        transition-colors
+        duration-150
+        sm:p-5
+        lg:p-[22px]
+        ${
+          hover
+            ? "border-[#3d4058]"
+            : "border-[#2a2d3d]"
+        }
+      `}
     >
+      {/* Icon */}
       <div
-        style={{
-          width: 42,
-          height: 42,
-          borderRadius: 10,
-          background: c.bg,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          marginBottom: 16,
-        }}
+        className={`
+          mb-4
+          flex h-[42px] w-[42px]
+          items-center justify-center
+          rounded-[10px]
+          ${c.bg}
+        `}
       >
-        <Icon size={20} color={c.fg} strokeWidth={2} />
+        <Icon
+          size={20}
+          strokeWidth={2}
+          className={c.fg}
+        />
       </div>
 
+      {/* Title */}
       <h3
-        style={{
-          color: "#e8e8ec",
-          fontSize: 16,
-          fontWeight: 600,
-          marginBottom: 8,
-        }}
+        className="
+          mb-2
+          text-[15px]
+          font-semibold
+          text-[#e8e8ec]
+          sm:text-base
+        "
       >
         {item.title}
       </h3>
 
+      {/* Description */}
       <p
-        style={{
-          color: "#8b8ea0",
-          fontSize: 13.5,
-          lineHeight: 1.55,
-          marginBottom: 16,
-        }}
+        className="
+          mb-4
+          text-[13px]
+          leading-[1.55]
+          text-[#8b8ea0]
+          sm:text-[13.5px]
+        "
       >
         {item.desc}
       </p>
 
+      {/* Download */}
       <button
         onClick={() => onDownload(item.title)}
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: 6,
-          color: "#5b8def",
-          fontSize: 13.5,
-          fontWeight: 500,
-          background: "none",
-          border: "none",
-          padding: 0,
-          cursor: "pointer",
-        }}
+        className="
+          inline-flex
+          items-center
+          gap-1.5
+          border-none
+          bg-transparent
+          p-0
+          text-[13px]
+          font-medium
+          text-[#5b8def]
+          transition-colors
+          hover:text-[#7ba5ff]
+        "
       >
         <Download size={14} />
         Download PDF
@@ -150,74 +178,103 @@ function VideoCard({ item, onPlay }) {
       onClick={() => onPlay(item.title)}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      style={{
-        display: "flex",
-        gap: 14,
-        background: "#171926",
-        border: `1px solid ${hover ? "#3d4058" : "#2a2d3d"}`,
-        borderRadius: 12,
-        padding: 14,
-        marginBottom: 16,
-        cursor: "pointer",
-        transition: "border-color 0.15s ease",
-      }}
+      className={`
+        mb-4
+        flex
+        cursor-pointer
+        gap-3.5
+        rounded-xl
+        border
+        bg-[#171926]
+        p-3.5
+        transition-colors
+        duration-150
+        ${
+          hover
+            ? "border-[#3d4058]"
+            : "border-[#2a2d3d]"
+        }
+      `}
     >
+      {/* Thumbnail */}
       <div
+        className="
+          relative
+          h-[68px]
+          w-[100px]
+          shrink-0
+          overflow-hidden
+          rounded-lg
+        "
         style={{
-          position: "relative",
-          flexShrink: 0,
-          width: 100,
-          height: 68,
-          borderRadius: 8,
-          overflow: "hidden",
           background: item.gradient,
         }}
       >
+        {/* Play button */}
         <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: 30,
-            height: 30,
-            borderRadius: "50%",
-            background: "rgba(255,255,255,0.9)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+          className="
+            absolute
+            left-1/2
+            top-1/2
+            flex
+            h-[30px]
+            w-[30px]
+            -translate-x-1/2
+            -translate-y-1/2
+            items-center
+            justify-center
+            rounded-full
+            bg-white/90
+          "
         >
-          <Play size={12} color="#171926" fill="#171926" style={{ marginLeft: 2 }} />
+          <Play
+            size={12}
+            color="#171926"
+            fill="#171926"
+            className="ml-0.5"
+          />
         </div>
+
+        {/* Duration */}
         <span
-          style={{
-            position: "absolute",
-            bottom: 5,
-            right: 6,
-            background: "rgba(0,0,0,0.7)",
-            color: "#fff",
-            fontSize: 10.5,
-            padding: "1px 5px",
-            borderRadius: 4,
-          }}
+          className="
+            absolute
+            bottom-[5px]
+            right-[6px]
+            rounded
+            bg-black/70
+            px-[5px]
+            py-px
+            text-[10.5px]
+            text-white
+          "
         >
           {item.duration}
         </span>
       </div>
 
-      <div>
+      {/* Content */}
+      <div className="min-w-0">
         <h3
-          style={{
-            color: "#e8e8ec",
-            fontSize: 14.5,
-            fontWeight: 600,
-            marginBottom: 5,
-          }}
+          className="
+            mb-1
+            text-[14px]
+            font-semibold
+            text-[#e8e8ec]
+            sm:text-[14.5px]
+          "
         >
           {item.title}
         </h3>
-        <p style={{ color: "#8b8ea0", fontSize: 13, lineHeight: 1.5 }}>
+
+        <p
+          className="
+            text-[12px]
+            leading-[1.5]
+            text-[#8b8ea0]
+            sm:text-[13px]
+          "
+        >
           {item.desc}
         </p>
       </div>
@@ -228,286 +285,420 @@ function VideoCard({ item, onPlay }) {
 export default function ResourcesSection() {
   const [toast, setToast] = useState("");
 
+  function showToast(message) {
+    setToast(message);
+
+    setTimeout(() => {
+      setToast("");
+    }, 2000);
+  }
+
   function handleDownload(name) {
-    setToast(`Downloading: ${name}.pdf`);
-    setTimeout(() => setToast(""), 2000);
+    showToast(`Downloading: ${name}.pdf`);
   }
 
   function handlePlay(title) {
-    setToast(`Playing video: ${title}`);
-    setTimeout(() => setToast(""), 2000);
+    showToast(`Playing video: ${title}`);
   }
 
   function handleChat() {
-    setToast("Starting live chat...");
-    setTimeout(() => setToast(""), 2000);
+    showToast("Starting live chat...");
   }
 
   return (
-    <div
-      style={{
-        fontFamily:
-          "'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif",
-        background: "#0d0e17",
-        minHeight: "100vh",
-        padding: "48px 20px",
-        position: "relative",
-      }}
+    <section
+      className="
+        min-h-screen
+        bg-[#0d0e17]
+        px-4
+        py-10
+        font-sans
+        sm:px-6
+        sm:py-12
+        lg:px-8
+        lg:py-16
+      "
     >
+      {/* Toast */}
       {toast && (
         <div
-          style={{
-            position: "fixed",
-            top: 20,
-            left: "50%",
-            transform: "translateX(-50%)",
-            background: "#232640",
-            color: "#e8e8ec",
-            fontSize: 13.5,
-            padding: "10px 18px",
-            borderRadius: 8,
-            border: "1px solid #3d4058",
-            zIndex: 50,
-          }}
+          className="
+            fixed
+            left-1/2
+            top-5
+            z-50
+            -translate-x-1/2
+            whitespace-nowrap
+            rounded-lg
+            border
+            border-[#3d4058]
+            bg-[#232640]
+            px-[18px]
+            py-2.5
+            text-[13px]
+            text-[#e8e8ec]
+            shadow-lg
+          "
         >
           {toast}
         </div>
       )}
 
+      {/* Main container */}
       <div
-        style={{
-          maxWidth: 1440,
-          margin: "0 auto",
-          display: "grid",
-          gridTemplateColumns: "1.15fr 0.85fr",
-          gap: 32,
-        }}
-        className="resources-grid-wrap  h-[700px] "
+        className="
+          mx-auto
+          grid
+          w-full
+          max-w-[1440px]
+          grid-cols-1
+          gap-8
+          lg:grid-cols-[1.15fr_0.85fr]
+        "
       >
+        {/* ===================================== */}
         {/* Resources & Downloads */}
-        <div className=" flex flex-col justify-between ">
+        {/* ===================================== */}
+
+        <div className="flex flex-col">
+          {/* Header */}
           <div
-            style={{
-              display: "flex",
-              alignItems: "baseline",
-              justifyContent: "space-between",
-              marginBottom: 6,
-            }}
+            className="
+              mb-1.5
+              flex
+              flex-col
+              gap-3
+              sm:flex-row
+              sm:items-baseline
+              sm:justify-between
+            "
           >
             <h1
-              style={{
-                color: "#ffffff",
-                fontSize: 46,
-                fontWeight: 700,
-                letterSpacing: "-0.3px",
-              }}
+              className="
+                text-3xl
+                font-bold
+                tracking-[-0.3px]
+                text-white
+                sm:text-4xl
+                lg:text-[46px]
+              "
             >
               Resources & downloads
             </h1>
+
             <a
               href="#"
-              style={{
-                color: "#5b8def",
-                fontSize: 14,
-                fontWeight: 500,
-                textDecoration: "none",
-                whiteSpace: "nowrap",
-              }}
+              className="
+                whitespace-nowrap
+                text-sm
+                font-medium
+                text-[#5b8def]
+                no-underline
+                transition-colors
+                hover:text-[#7ba5ff]
+              "
             >
               View all ›
             </a>
           </div>
 
-          <p style={{ color: "#7d8092", fontSize: 18, marginBottom: 20 }}>
+          {/* Description */}
+          <p
+            className="
+              mb-5
+              text-[15px]
+              text-[#7d8092]
+              sm:text-lg
+            "
+          >
             Access helpful documents and guides anytime.
           </p>
 
+          {/* Resource cards */}
           <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: 16,
-            }}
-            className="grid grid-cols-2 gap-4 w-full lg:h-[560px]"
+            className="
+              grid
+              grid-cols-1
+              gap-4
+              sm:grid-cols-2
+            "
           >
             {resources.map((item) => (
-              <ResourceCard key={item.id} item={item} onDownload={handleDownload} />
+              <ResourceCard
+                key={item.id}
+                item={item}
+                onDownload={handleDownload}
+              />
             ))}
           </div>
         </div>
 
-        {/* Video Tutorials */}
+        {/* ===================================== */}
+        {/* Video Tutorials + Support */}
+        {/* ===================================== */}
+
         <div>
+          {/* Header */}
           <div
-            style={{
-              display: "flex",
-              alignItems: "baseline",
-              justifyContent: "space-between",
-              marginBottom: 26,
-            }}
+            className="
+              mb-6
+              flex
+              items-baseline
+              justify-between
+              gap-4
+            "
           >
-            <h1
-              style={{
-                color: "#ffffff",
-                fontSize: 26,
-                fontWeight: 700,
-                letterSpacing: "-0.3px",
-              }}
+            <h2
+              className="
+                text-2xl
+                font-bold
+                tracking-[-0.3px]
+                text-white
+              "
             >
               Video tutorials
-            </h1>
+            </h2>
+
             <a
               href="#"
-              style={{
-                color: "#5b8def",
-                fontSize: 14,
-                fontWeight: 500,
-                textDecoration: "none",
-                whiteSpace: "nowrap",
-              }}
+              className="
+                whitespace-nowrap
+                text-sm
+                font-medium
+                text-[#5b8def]
+                no-underline
+                hover:text-[#7ba5ff]
+              "
             >
               All videos ›
             </a>
           </div>
 
+          {/* Videos */}
           {videos.map((item) => (
-            <VideoCard key={item.id} item={item} onPlay={handlePlay} />
+            <VideoCard
+              key={item.id}
+              item={item}
+              onPlay={handlePlay}
+            />
           ))}
 
+          {/* ================================= */}
           {/* Direct Support */}
+          {/* ================================= */}
+
           <div
-          className=" h-[410px] rounded-lg"
-            style={{
-                position: "relative",
-                background: "#141625",
-                border: "1px solid #2a2d3d",
-                borderRadius: 12,
-                padding: "26px 24px",
-                overflow: "hidden",
-              }}
+            className="
+              relative
+              overflow-hidden
+              rounded-xl
+              border
+              border-[#2a2d3d]
+              bg-[#141625]
+              p-5
+              sm:p-6
+              lg:min-h-[410px]
+            "
           >
+            {/* Glow */}
             <div
-              style={{
-                position: "absolute",
-                top: -40,
-                right: -40,
-                width: 170,
-                height: 190,
-                background:
-                  "radial-gradient(circle, rgba(91,141,239,0.18) 0%, rgba(91,141,239,0) 70%)",
-                pointerEvents: "none",
-              }}
-              
+              className="
+                pointer-events-none
+                absolute
+                -right-10
+                -top-10
+                h-[190px]
+                w-[170px]
+                bg-[radial-gradient(circle,rgba(91,141,239,0.18)_0%,rgba(91,141,239,0)_70%)]
+              "
             />
 
             <h2
-              style={{
-                position: "relative",
-                color: "#ffffff",
-                fontSize: 20,
-                fontWeight: 700,
-                marginBottom: 20,
-              }}
+              className="
+                relative
+                mb-5
+                text-xl
+                font-bold
+                text-white
+              "
             >
               Direct support
             </h2>
 
-            <div style={{ position: "relative", display: "flex", gap: 14, marginBottom: 20 }}>
+            {/* Call */}
+            <div
+              className="
+                relative
+                mb-5
+                flex
+                gap-3.5
+              "
+            >
               <div
-                style={{
-                  flexShrink: 0,
-                  width: 38,
-                  height: 38,
-                  borderRadius: 10,
-                  background: "#1e3a6e",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+                className="
+                  flex
+                  h-[38px]
+                  w-[38px]
+                  shrink-0
+                  items-center
+                  justify-center
+                  rounded-[10px]
+                  bg-[#1e3a6e]
+                "
               >
-                <Headphones size={18} color="#93c5fd" />
+                <Headphones
+                  size={18}
+                  className="text-[#93c5fd]"
+                />
               </div>
+
               <div>
-                <h3 style={{ color: "#e8e8ec", fontSize: 14.5, fontWeight: 600, marginBottom: 3 }}>
+                <h3
+                  className="
+                    mb-[3px]
+                    text-[14px]
+                    font-semibold
+                    text-[#e8e8ec]
+                  "
+                >
                   Call us anytime
                 </h3>
-                <p style={{ color: "#9698a8", fontSize: 13 }}>(800) 123-4567</p>
+
+                <p className="text-[13px] text-[#9698a8]">
+                  (800) 123-4567
+                </p>
+
                 <span
-                  style={{
-                    display: "inline-block",
-                    marginTop: 4,
-                    fontSize: 11.5,
-                    fontWeight: 600,
-                    letterSpacing: "0.3px",
-                    color: "#5b8def",
-                  }}
+                  className="
+                    mt-1
+                    inline-block
+                    text-[11.5px]
+                    font-semibold
+                    tracking-[0.3px]
+                    text-[#5b8def]
+                  "
                 >
                   AVAILABLE 24/7
                 </span>
               </div>
             </div>
 
-            <div style={{ position: "relative", display: "flex", gap: 14, marginBottom: 20 }}>
+            {/* Live Chat */}
+            <div
+              className="
+                relative
+                mb-5
+                flex
+                gap-3.5
+              "
+            >
               <div
-                style={{
-                  flexShrink: 0,
-                  width: 38,
-                  height: 38,
-                  borderRadius: 10,
-                  background: "#14493a",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+                className="
+                  flex
+                  h-[38px]
+                  w-[38px]
+                  shrink-0
+                  items-center
+                  justify-center
+                  rounded-[10px]
+                  bg-[#14493a]
+                "
               >
-                <MessageCircle size={18} color="#6ee7b7" />
+                <MessageCircle
+                  size={18}
+                  className="text-[#6ee7b7]"
+                />
               </div>
+
               <div>
-                <h3 style={{ color: "#e8e8ec", fontSize: 14.5, fontWeight: 600, marginBottom: 3 }}>
+                <h3
+                  className="
+                    mb-[3px]
+                    text-[14px]
+                    font-semibold
+                    text-[#e8e8ec]
+                  "
+                >
                   Live chat
                 </h3>
-                <p style={{ color: "#9698a8", fontSize: 13, marginBottom: 4 }}>
+
+                <p
+                  className="
+                    mb-1
+                    text-[13px]
+                    text-[#9698a8]
+                  "
+                >
                   Chat with our experts instantly.
                 </p>
+
                 <button
                   onClick={handleChat}
-                  style={{
-                    background: "none",
-                    border: "none",
-                    padding: 0,
-                    cursor: "pointer",
-                    fontSize: 11.5,
-                    fontWeight: 600,
-                    letterSpacing: "0.3px",
-                    color: "#4ade80",
-                  }}
+                  className="
+                    border-none
+                    bg-transparent
+                    p-0
+                    text-[11.5px]
+                    font-semibold
+                    tracking-[0.3px]
+                    text-green-400
+                    hover:text-green-300
+                  "
                 >
                   Start chat now
                 </button>
               </div>
             </div>
 
-            <div style={{ position: "relative", display: "flex", gap: 14 }}>
+            {/* Email */}
+            <div
+              className="
+                relative
+                flex
+                gap-3.5
+              "
+            >
               <div
-                style={{
-                  flexShrink: 0,
-                  width: 38,
-                  height: 38,
-                  borderRadius: 10,
-                  background: "#6e3f1e",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+                className="
+                  flex
+                  h-[38px]
+                  w-[38px]
+                  shrink-0
+                  items-center
+                  justify-center
+                  rounded-[10px]
+                  bg-[#6e3f1e]
+                "
               >
-                <Mail size={18} color="#f5b876" />
+                <Mail
+                  size={18}
+                  className="text-[#f5b876]"
+                />
               </div>
+
               <div>
-                <h3 style={{ color: "#e8e8ec", fontSize: 14.5, fontWeight: 600, marginBottom: 3 }}>
+                <h3
+                  className="
+                    mb-[3px]
+                    text-[14px]
+                    font-semibold
+                    text-[#e8e8ec]
+                  "
+                >
                   Email support
                 </h3>
-                <p style={{ color: "#9698a8", fontSize: 13 }}>support@carguard.com</p>
-                <p style={{ color: "#9698a8", fontSize: 13, marginTop: 2 }}>
+
+                <p className="text-[13px] text-[#9698a8]">
+                  support@carguard.com
+                </p>
+
+                <p
+                  className="
+                    mt-0.5
+                    text-[13px]
+                    text-[#9698a8]
+                  "
+                >
                   Typical response within 2 hours.
                 </p>
               </div>
@@ -515,14 +706,6 @@ export default function ResourcesSection() {
           </div>
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 820px) {
-          .resources-grid-wrap {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
-    </div>
+    </section>
   );
 }

@@ -34,7 +34,7 @@ const stats = [
 export default function WhyChooseUs() {
   return (
     <section
-      className="w-full relative overflow-hidden border border-white/10 h-[500px] flex items-center justify-center"
+      className="w-full relative overflow-hidden border border-white/10 lg:h-[500px] h-auto flex items-center justify-center"
       style={{
         backgroundImage:
           "linear-gradient(120deg, rgba(6,10,25,0.94) 20%, rgba(6,10,25,0.75) 60%, rgba(6,10,25,0.55) 100%), url('/assets/images/why-choose-us-bg.png')",
