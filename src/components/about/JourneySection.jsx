@@ -2,7 +2,7 @@ import React from "react";
 import { MapPin, Heart, ThumbsUp, Award, ShieldCheck, HandHeart, Trophy } from "lucide-react";
 
 import { ArrowRight, BadgeCheck, CircleCheck, Headphones, Play, UserRound, Wrench } from 'lucide-react'
-import CtaBenner from "./CtaBenner";
+import CtaBenner from "../home/CtaBenner";
 
 const values = [
   {
@@ -73,7 +73,7 @@ export default function JourneySection() {
 
   return (
     <div className="h-auto w-auto bg-[#0b1220] gap-10 flex flex-col">
-        <div className="flex items-center justify-center w-auto bottom-0 sm:left-0 lg:w-full lg:h-30 h-auto px-4 sm:px-6 lg:px-10">
+        <div className="flex items-center mt-10 lg:mt-0 justify-center w-auto bottom-0 sm:left-0 lg:w-full lg:h-30 h-auto px-4 sm:px-6 lg:px-10">
           <div className='w-auto lg:w-[500px] overflow-hidden p-2 flex justify-around h-auto lg:h-full lg:w-full items-center rounded-lg bg-white gap-4 flex-col lg:flex-row'>
               {bottomSection.map((btm)=>(
                 <div key={btm.id} className='flex items-center justify-between h-auto w-auto gap-3 '>
