@@ -29,7 +29,7 @@ const WarrantyPage = () => {
   return (
     <PageLayout>
 
-      <main className="flex-1 items-center justify-center relative w-full overflow-hidden ">
+      <main className="flex-1 items-center px-6 justify-center relative w-full overflow-hidden ">
 
         <div className="absolute inset-0 w-full h-full"
         />
@@ -40,7 +40,7 @@ const WarrantyPage = () => {
         />
 
         <div
-          className="relative   lg:w-[1800px] z-10 mx-auto min-h-[760px] min-w-[1400px] max-w-[1400px] px-6 pt-[80px] sm:px-8 lg:px-0" >
+          className="relative w-auto z-10 mx-auto min-h-[760px]  px-8 pt-[80px] sm:px-8 lg:px-6" >
           <div className="absolute mt-10 lg:mt-0 top-30 flex flex-col justify-center gap-3 h-[500px] w-[700px] max-w-[720px]">
 
             {/* Small title */}
@@ -63,12 +63,7 @@ const WarrantyPage = () => {
 
             {/* Description */}
             <p
-              className="mt-5
-    text-lg lg:text-2xl
-    font-normal
-    leading-[1.65]
-    text-slate-300
-  "
+              className="mt-5 text-lg lg:text-2xl py-2 w-[300px] lg:w-full font-normal leading-[1.65] text-slate-300"
             >
               Choose the right plan for your vehicle and enjoy complete
               <br className="hidden sm:block" />
@@ -77,8 +72,8 @@ const WarrantyPage = () => {
 
           </div>
           <div
-            className="absolute top-1 lg:top-[12px] rounded-[17px] border-4 border-white/20 w-auto  h-auto overflow-hidden lg:w-[350px] lg:h-[330px]
-              bg-white/[0.10] backdrop-blur-md px-[17px] py-[16px] shadow-[0_10px_35px_rgba(0,0,0,0.15)]
+            className="absolute top-1 lg:top-[12px] px-10 rounded-[17px] border-4 border-white/20 w-auto  h-auto overflow-hidden lg:w-[350px] lg:h-[330px]
+              bg-white/[0.10] backdrop-blur-md py-[16px] shadow-[0_10px_35px_rgba(0,0,0,0.15)]
 
 
               sm:right-8
@@ -151,24 +146,19 @@ const WarrantyPage = () => {
 
           <div
             className="
-            mt-120 lg:mt-0 md:mt-0
-              lg:absolute
+            mt-120 lg:mt-0  lg:absolute
               bottom-[-2px]
               left-0
               lg:w-full
               w-auto
               lg:text-center 
               p-4
+              
             "
                       >
 
                         <h2
-               className="
-                text-[30px]
-                font-semibold
-                leading-tight
-                tracking-[-1px]
-                text-white
+               className=" text-[30px] mt-2  font-semibold leading-tight tracking-[-1px] text-white
                 sm:text-[60px]
               "
                         >

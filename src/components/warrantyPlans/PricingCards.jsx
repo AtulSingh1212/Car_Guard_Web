@@ -173,7 +173,7 @@ export default function PricingCards() {
               className={`relative w-[450px] h-[550px] rounded-4xl p-7 flex flex-col ${
                 plan.highlighted
                   ? "bg-gradient-to-b from-violet-700/70 to-indigo-900/70 border border-violet-400/30 md:-mt-3 md:mb-[-0.75rem]"
-                  : "bg-white/[0.03] border border-white/10"
+                  : "bg-white/[0.03] group border border-white/10 hover:bg-indigo-900/70 transition-all duration-300 cursor-pointer hover:border-violet-400/30"
               }`}
             >
               {plan.highlighted && (
@@ -242,8 +242,8 @@ export default function PricingCards() {
                 onClick={()=>handleSelectPlan(plan)}
                 className={`w-full font-semibold text-sm py-3 rounded-lg hover:bg-transparent cursor-pointer flex items-center justify-center gap-2 transition-opacity hover:opacity-90 ${
                   plan.highlighted
-                    ? "bg-gradient-to-r from-orange-400 to-pink-500 text-white"
-                    : "bg-white/10 text-white"
+                    ? "bg-gradient-to-r from-orange-400 to-pink-500 text-white shadow-md hover:shadow-black"
+                    : "bg-white/10 text-white group-hover:bg-indigo-900/70 group-hover:border-2 group-hover:border-amber-400 group-hover:text-white transition-all duration-300"
                 }`}
               >
                 View Plan Details <ArrowRight size={15} />
