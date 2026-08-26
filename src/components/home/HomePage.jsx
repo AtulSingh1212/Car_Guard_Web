@@ -74,10 +74,10 @@ const HomePage = () => {
         </div>
 
         <main className="flex  justify-center items-center w-full h-[100vh]">
-          <div className='w-full max-w-7xl gap-9 flex sm:items-center lg:items-start gl:flex-col'>
+          <div className='w-full max-w-7xl gap-9 flex flex-col sm:items-center lg:items-start gl:flex-col'>
             <div className='flex flex-col gap-4'>
               <h4 className='text-3xl uppercase text-[#F2745F] font-bold tracking-widest'>Drive Worry-Free </h4>
-              <h1 className='text-8xl font-bold text-white'>Every Mile <br /> <span className='text-[#F2745F]'>Protected</span></h1>
+              <h1 className='text-8xl font-bold text-white'>Every Mile<br /> <span className='text-[#F2745F]'>Protected</span></h1>
               <p className='text-2xl text-gray-200'>CarGuard Extended Warranty gives you complete <br /> protection
                 and peace of mind on every journey</p>
             </div>
