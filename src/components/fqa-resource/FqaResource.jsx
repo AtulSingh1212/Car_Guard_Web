@@ -32,10 +32,11 @@ const FqaResource = () => {
             className="
         relative
         mt-10
-        min-h-[460px]
-        h-[500px]
-        w-full
-        overflow-hidden
+        min-h-[460px] 
+        lg:h-[500px]
+        lg:w-full
+        
+        
         bg-cover
         bg-center
         bg-no-repeat
@@ -56,10 +57,13 @@ const FqaResource = () => {
           mx-auto
           flex
           min-h-[405px]
-          
+        
           w-full
           
-          items-start
+          items-center
+          justify-center
+          lg:justify-start
+          lg:items-start
           px-6
           pt-[88px] 
           md:px-8
@@ -73,11 +77,12 @@ const FqaResource = () => {
                   className="
             w-full
               mb-4
-              text-2xl
+              text-md lg:text-2xl
               font-semibold
               uppercase
               tracking-[3px]
               text-[#ff7655]
+              text-center lg:text-left
             "
                 >
                   FAQ / RESOURCES

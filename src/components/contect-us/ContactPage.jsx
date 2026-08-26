@@ -186,28 +186,31 @@ const ContactPage=()=>{
           lg:px-8
         "
             >
-              <div className="w-[920px] px-20 py-10">
+              <div className=" h-auto min-h-[505px] min-w-[350px] p-2 lg:w-[920px] lg:px-20 lg:py-10">
 
                 {/* Small heading */}
                 <p
                   className="
             w-full
               mb-4
-              text-2xl
+              text-center lg:text-left
+              text-md lg:text-2xl
+              md:text-xl
               font-semibold
               uppercase
               tracking-[3px]
               text-[#ff7655]
             "
                 >
-                  FAQ / RESOURCES
+                  our support systems
                 </p>
 
                 {/* Main heading */}
                 <h1
                   className="
             
-              text-7xl
+              lg:text-7xl
+              text-6xl
               font-semibold
               leading-[1.08]
               tracking-[-1.5px]

@@ -74,18 +74,18 @@ const HomePage = () => {
         </div>
 
         <main className="flex  justify-center items-center w-full h-[100vh]">
-          <div className='w-full max-w-7xl gap-9 flex flex-col sm:items-center lg:items-start gl:flex-col'>
+          <div className='w-full max-w-7xl gap-9 flex flex-col items-center md:items-start lg:items-start gl:flex-col p-2'>
             <div className='flex flex-col gap-4'>
-              <h4 className='text-3xl uppercase text-[#F2745F] font-bold tracking-widest'>Drive Worry-Free </h4>
-              <h1 className='text-8xl font-bold text-white'>Every Mile<br /> <span className='text-[#F2745F]'>Protected</span></h1>
-              <p className='text-2xl text-gray-200'>CarGuard Extended Warranty gives you complete <br /> protection
+              <h4 className='text-2xl lg:text-3xl uppercase text-[#F2745F] font-bold tracking-widest'>Drive Worry-Free </h4>
+              <h1 className='text-6xl lg:text-8xl font-bold text-white'>Every Mile<br /> <span className='text-[#F2745F]'>Protected</span></h1>
+              <p className='text-xl lg:text-2xl text-gray-200'>CarGuard Extended Warranty gives you complete <br /> protection
                 and peace of mind on every journey</p>
             </div>
 
             <div className='flex gap-4 p-2'>
               <button 
               onClick={handleExploreWarrantyPlans}
-              className='bg-[#F2745F] cursor-pointer text-black font-semubold text-xl px-4 py-2 rounded-2xl h-18 w-[300px] flex items-center justify-center gap-2'>Explore Warranty Plans <ArrowRight /></button>
+              className='bg-[#F2745F] cursor-pointer text-black font-semubold text-xl px-4 py-2 rounded-2xl h-16 lg:h-18 w-auto lg:w-[300px] flex items-center justify-center gap-2'>Explore Warranty Plans <ArrowRight /></button>
               <button className='text-white font-semubold text-xl px-4 py-2 rounded-2xl h-18 w-[220px]
               backdrop-blur-sm bg-white/10 flex items-center justify-center gap-2 cursor-pointer'
               > <span className='text-2xl p-2 border-3 cursor-pointer rounded-full'><Play /></span> Watch Video</button>

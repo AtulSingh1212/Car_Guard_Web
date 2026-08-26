@@ -74,6 +74,7 @@ const AboutPage = () => {
                 onClick={()=>navigate('/warranty-plans')}
                   type="button"
                   className="
+                  mb-2 lg:mb-0
               mt-7 flex items-center gap-2
               rounded-lg
               bg-gradient-to-r from-[#ff6b4a] to-[#ffb46b]
