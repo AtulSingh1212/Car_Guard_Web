@@ -17,7 +17,7 @@ export default function PremiumPlan() {
      return( <div className="flex items-center justify-center h-full w-full text-2xl font-bold text-white">No plan selected</div>)
     }
   return (
-    <section className="relative min-h-[455px] w-full overflow-hidden ">
+    <section className="relative h-[900px] lg:h-[455px]  w-full overflow-hidden ">
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -34,12 +34,9 @@ export default function PremiumPlan() {
       <div className="absolute inset-0 " />
 
       {/* Main container */}
-      <div className="relative mx-auto flex min-h-[595px] max-w-[1380px] items-center px-6 py-10">
+      <div className="relative mx-auto  flex max-w-[1380px] items-center px-6 py-10">
         <div
-          className="
-            w-full
-            w-[1480px]
-            h-[455px]
+          className="w-full w-[1480px] h-full lg:h-[455px]
             rounded-lg
             border border-white/[0.09]
             bg-white/[0.07]

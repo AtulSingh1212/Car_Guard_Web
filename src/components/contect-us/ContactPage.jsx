@@ -145,23 +145,11 @@ import PageLaout from '../../pages/Layout/PageLayout'
 
 
 
-
 const ContactPage=()=>{
   return(<PageLaout>
     {/* <section */}
-            <section className="
-        relative
-        mt-10
-        min-h-[460px]
-        h-[500px]
-        w-full
-        overflow-hidden
-        bg-cover
-        bg-center
-        bg-no-repeat
-        flex items-center justify-between
-        px-6 md:px-10
-      ">
+            <section className="relative mt-10 min-h-[460px] h-[500px] w-full overflow-hidden bg-cover bg-center bg-no-repeat flex items-center justify-between
+        px-6 md:px-10 lg:mt-40 md:mt-20">
           
             {/* Dark overlay */}
             <div className="absolute inset-0 " />
@@ -170,21 +158,8 @@ const ContactPage=()=>{
 
             {/* Content */}
             <div
-              className="
-          relative
-          z-10
-          mx-auto
-          flex
-          min-h-[405px]
-        
-          w-full
-        
-          items-start
-          px-6
-          pt-[88px] 
-          md:px-8
-          lg:px-8
-        "
+              className=" relative z-10 mx-auto flex min-h-[405px] 
+              w-full items-start px-6 pt-[88px] md:px-8 lg:px-8 "
             >
               <div className=" h-auto min-h-[505px] min-w-[350px] p-2 lg:w-[920px] lg:px-20 lg:py-10">
 

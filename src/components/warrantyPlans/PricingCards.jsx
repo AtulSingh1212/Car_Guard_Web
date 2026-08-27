@@ -163,14 +163,14 @@ export default function PricingCards() {
   }
 
   return (
-    <section className=" w-full h-auto  bg-[#0b1220]  px-6 md:px-10 flex  justify-center">
+    <section className=" w-full h-auto  bg-[#0b1220] px-4 md:px-6 flex  justify-center">
       <div className=" w-full h-auto  p-2 flex mt-6 justify-center flex-wrap gap-4 ">
         {plans.map((plan) => {
           const Icon = plan.icon; 
           return (
             <div
               key={plan.name}
-              className={`relative w-[450px] h-[550px] rounded-4xl p-7 flex flex-col ${
+              className={`relative w-auto h-auto lg:w-[450px] lg:h-[550px] rounded-4xl p-7 flex flex-col ${
                 plan.highlighted
                   ? "bg-gradient-to-b from-violet-700/70 to-indigo-900/70 border border-violet-400/30 md:-mt-3 md:mb-[-0.75rem]"
                   : "bg-white/[0.03] group border border-white/10 hover:bg-indigo-900/70 transition-all duration-300 cursor-pointer hover:border-violet-400/30"

@@ -63,8 +63,7 @@ const PrimiumLayout = () => {
 
 
       <div className="relative z-10 flex items-center justify-between min-h-screen flex-col">
-
-
+        
         <div className="w-full bg-black/10">
           <Navbar />
         </div>
