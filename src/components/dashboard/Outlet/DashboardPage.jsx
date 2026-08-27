@@ -1,5 +1,6 @@
 import { ArrowRight, CreditCard, FileText, Headphones, ShieldCheck, Ticket, Wrench } from "lucide-react";
 import { Card } from "./PageHeader";
+import { useNavigate } from "react-router-dom";
 const vehicles = [
   {
     id: 1,
@@ -28,6 +29,7 @@ const vehicles = [
 ];
 
  function DashboardPage({ go }) {
+  const navigate = useNavigate();
     return (
       <div>
         <div className="relative rounded-2xl overflow-hidden mb-8 p-8 bg-gradient-to-br from-[#241b3d] via-[#1a1730] to-[#12131f] border border-[#2a2d3d]">
@@ -39,7 +41,7 @@ const vehicles = [
           <div>
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-white text-xl font-bold">My Vehicles</h2>
-              <button onClick={() => go("vehicles")} className="text-purple-400 text-[13px] font-medium hover:underline flex items-center gap-1">
+              <button onClick={() => navigate("/dashboard/vehicles")} className="text-purple-400 cursor-pointer text-[13px] font-medium hover:underline flex items-center gap-1">
                 View All Vehicles <ArrowRight size={13} />
               </button>
             </div>
@@ -72,7 +74,7 @@ const vehicles = [
   
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-white text-xl font-bold">Recent Claims</h2>
-              <button onClick={() => go("claims")} className="text-purple-400 text-[13px] font-medium hover:underline flex items-center gap-1">
+              <button onClick={() => navigate("/dashboard/claims")} className="text-purple-400 cursor-pointer text-[13px] font-medium hover:underline flex items-center gap-1">
                 View All Claims <ArrowRight size={13} />
               </button>
             </div>
@@ -81,14 +83,14 @@ const vehicles = [
               <FileText size={44} className="text-[#333650] mb-4" />
               <p className="text-white text-[15px] font-semibold mb-1">No claims submitted yet.</p>
               <p className="text-gray-500 text-[13px] mb-5">If you need repair assistance, you can file a claim.</p>
-              <button onClick={() => go("claims")} className="bg-gradient-to-r from-purple-600 to-pink-500 text-white text-[13.5px] font-semibold rounded-lg px-5 py-2.5 flex items-center gap-2">
+              <button onClick={() => navigate("/dashboard/claims")} className="bg-gradient-to-r cursor-pointer from-purple-600 to-pink-500 text-white text-[13.5px] font-semibold rounded-lg px-5 py-2.5 flex items-center gap-2">
                 File a Claim <ArrowRight size={14} />
               </button>
             </Card>
           </div>
   
           <div className="flex flex-col gap-6">
-            <Card className="p-5">
+            <Card className="p-5 hover:bg-indigo-900/40 transition-all duration-300">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-white text-[15px] font-bold">Active Contract</h3>
                 <span className="bg-green-500/15 text-green-400 text-[10.5px] font-semibold px-2 py-0.5 rounded-full">Active</span>
@@ -106,7 +108,7 @@ const vehicles = [
                 <div className="flex justify-between"><span className="text-gray-500">Coverage Start Date</span><span className="text-gray-200">Jul 20, 2024</span></div>
                 <div className="flex justify-between"><span className="text-gray-500">Coverage End Date</span><span className="text-gray-200">Jul 20, 2026</span></div>
               </div>
-              <button onClick={() => go("contracts")} className="w-full mt-4 text-purple-400 border border-purple-500/40 hover:bg-purple-500/10 text-[13px]
+              <button onClick={() => navigate("/dashboard/contracts")} className="w-full mt-4 text-purple-400 border border-purple-500/40 hover:bg-purple-500/10 text-[13px]
                cursor-pointer font-medium rounded-lg py-2.5 transition flex items-center justify-center gap-1.5">
                 View Contract Details <ArrowRight size={13} />
               </button>
@@ -116,17 +118,17 @@ const vehicles = [
               <h3 className="text-white text-[15px] font-bold mb-4">Quick Actions</h3>
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { icon: CreditCard, label: "Buy a New Plan", page: "payments" },
-                  { icon: Ticket, label: "File a Claim", page: "claims" },
-                  { icon: Wrench, label: "Roadside Assistance", page: "roadside" },
-                  { icon: Headphones, label: "Contact Support", page: "contact" },
+                  { icon: CreditCard, label: "Buy a New Plan", page: "/warranty-plans" },
+                  { icon: Ticket, label: "File a Claim", page: "/dashboard/claims" },
+                  { icon: Wrench, label: "Roadside Assistance", page: "/dashboard/roadside" },
+                  { icon: Headphones, label: "Contact Support", page: "/dashboard/contact" },
                 ].map((a, i) => {
                   const Icon = a.icon;
                   return (
                     <button
                       key={i}
-                      onClick={() => go(a.page)}
-                      className="flex flex-col items-center justify-center gap-2 bg-[#1a1c2b] border border-[#2a2d3d] hover:border-purple-500/50 rounded-xl py-4 transition"
+                      onClick={() => navigate(a.page)}
+                      className="flex flex-col cursor-pointer items-center justify-center gap-2 bg-[#1a1c2b] border border-[#2a2d3d] hover:border-purple-500/50 rounded-xl py-4 transition"
                     >
                       <Icon size={17} className="text-gray-300" />
                       <span className="text-gray-300 text-[11.5px] font-medium text-center leading-tight">{a.label}</span>

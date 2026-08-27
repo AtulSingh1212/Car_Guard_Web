@@ -166,15 +166,7 @@ const WarrantyPage = () => {
                         </h2>
 
                         <p
-                          className="
-                mt-2
-                w-[300px]
-                text-[20px]
-                text-slate-400
-                tracking-widest
-                lg:w-full
-                md:w-auto
-              "
+                          className=" mt-2 w-[300px]  text-[20px] text-slate-400 tracking-widest lg:w-full md:w-auto"
             >
               Comprehensive coverage options designed for your vehicle
               and your peace of mind.

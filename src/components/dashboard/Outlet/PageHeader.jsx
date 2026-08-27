@@ -1,5 +1,5 @@
 export const Card = ({ children, className = "" }) => (
-    <div className={`bg-[#141625] border border-[#2a2d3d] rounded-2xl ${className}`}>{children}</div>
+    <div className={`bg-[#141625] border border-[#2a2d3d] rounded-2xl hover:bg-indigo-900/40 transition-all duration-300 ${className}`}>{children}</div>
 );
 
 export const PageHeader = ({ title, subtitle, action }) => (
